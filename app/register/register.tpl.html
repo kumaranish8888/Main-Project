@@ -1,0 +1,77 @@
+<form class="form-horizontal" name="registerForm" novalidate ng-controller="registerCtrl as rc">
+  <fieldset>
+    <legend class="text">Sign Up</legend>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label text">Email</label>
+      <div class="col-lg-4">
+        <input class="form-control" placeholder="Email" type="text">
+      </div>
+    </div>
+      
+      <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label text">Username</label>
+      <div class="col-lg-4">
+        <input class="form-control" placeholder="Password" type="text">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Checkbox
+          </label>
+        </div>
+      </div>
+    </div>
+    
+      <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label text">Password</label>
+      <div class="col-lg-4">
+        <input class="form-control" placeholder="Password" type="password">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Checkbox
+          </label>
+        </div>
+      </div>
+    </div>
+    
+      <div class="form-group">
+      <label for="textArea" class="col-lg-2 control-label text">Textarea</label>
+      <div class="col-lg-4">
+        <textarea class="form-control" rows="3"></textarea>
+      </div>
+    </div>
+    
+      <div class="form-group">
+      <label class="col-lg-2 control-label text">Gender</label>
+      <div class="col-lg-4">
+        <div class="radio">
+          <label>
+            <input name="optionsRadios" name="gender" type="radio" value="M" class="text">Male
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input name="optionsRadios" name="gender" type="radio" value="F" class="text">Female
+          </label>
+        </div>
+      </div>
+    </div>
+   
+      <div class="form-group">
+      <label for="select" class="col-lg-2 control-label text">Selects</label>
+      <div class="col-lg-4">
+        <select class="form-control" id="select">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-4 col-lg-offset-2">
+        <button type="reset" class="btn btn-default">Cancel</button>
+        <button type="submit" class="btn btn-primary" ng-click="rc.changeState()">Submit</button>
+      </div>
+    </div>
+  </fieldset>
+</form>

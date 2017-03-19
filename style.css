@@ -1,0 +1,13 @@
+h1 {
+    color: blue;
+}
+
+body {
+    background-image: url(image.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.text {
+    color: black;
+}
