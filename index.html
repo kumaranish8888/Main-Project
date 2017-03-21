@@ -8,8 +8,15 @@
     </head>
     <body ng-controller="mainCtrl as mc" class="container">
     
-    <div ng-include="mc.headerTemplate"></div>
-        <div ui-view></div>
+  <!--  <div ng-include="mc.headerTemplate"></div> -->
+        
+        <custom-nav-bar></custom-nav-bar>
+        
+        <div custom-nav-bar></div>
+        
+        <div class="custom-nav-bar"></div>
+        
+        <div ui-view></div> 
     
     
     
@@ -19,5 +26,6 @@
         <script src="app/register/register.js"></script>
         <script src="app/login/login.js"></script>
         <script src="app/products/products.js"></script>
+        <script src="app/common/common.js"></script>
     </body>
 </html>

@@ -2,9 +2,9 @@
     
     angular.module("products", []);
     
-    angular.module("products").controller("productsCtrl", ["productsSvc", productsCtrl]);
+    angular.module("products").controller("productsCtrl", ["productsSvc", "$rootScope", productsCtrl]);
     
-    function productsCtrl(productsSvc){
+    function productsCtrl(productsSvc, $rootScope){
         var pc = this;
         
         productsSvc.getProducts().then(function(response){
@@ -15,6 +15,10 @@
         }).finally(function(response){
             
         });
+        
+        pc.addToCart = function(data){
+            $rootScope.$broadcast("ADD-ITEM-TO-CART");
+        }
         
     }
     

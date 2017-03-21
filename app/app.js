@@ -1,6 +1,6 @@
 (function(){
     
-    angular.module("project", ["header", "posts", "ui.router", "register", "login", "products"]);
+    angular.module("project", ["header", "posts", "ui.router", "register", "login", "products", "common"]);
     
     angular.module("project").config(["$stateProvider",function($stateProvider){
         
