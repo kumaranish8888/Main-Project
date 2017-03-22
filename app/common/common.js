@@ -3,8 +3,8 @@
     angular.module("common", []);
     angular.module("common").directive("customBrand", [customBrand]);
     angular.module("common").directive("customNavBar", [customNavBar]);
-    angular.module("common").directive("customDatePicker", [customDatePicker]);
     angular.module("common").directive("numbersOnly", [numbersOnly]);
+    angular.module("common").directive("customDatePicker", [customDatePicker]);
     
     function customBrand(){
         return {
