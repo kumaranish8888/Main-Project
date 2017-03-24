@@ -8,13 +8,13 @@
     .directive("checkUserName", [checkUserName])
     .directive("onlyNumbers", [onlyNumbers]);
     
-  /*  function brandName(){
+    function brandName(){
         
         return {
-          template: '<a class="navbar-brand" href="#">{{hc.mybrandName}}</a>'  
+          template: '<a class="navbar-brand" href="#">{{mybrandName}}</a>'  
         };
         
-    } */
+    } 
     
     function customNavBar(){
         return {
@@ -23,7 +23,7 @@
         };
     }
     
-    function brandName(){
+    function orgName(){
         return {
             restrict: "A",
             template: '<a class="navbar-brand" href="#">{{companyName}}</a>',

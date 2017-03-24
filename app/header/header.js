@@ -2,11 +2,11 @@
     
     angular.module("header", []);
     
-    angular.module("header").controller("headerCtrl", ["$state", "$rootScope", headerCtrl]);
+    angular.module("header").controller("headerCtrl", ["$state", "$rootScope", "$scope", headerCtrl]);
     
-    function headerCtrl($state, $rootScope){
+    function headerCtrl($state, $rootScope, $scope){
         var hm = this;
-        hm.mybrandName = "BitBlogger";
+        $scope.mybrandName = "BitBlogger";
         
         hm.cartItems =  0;
         
