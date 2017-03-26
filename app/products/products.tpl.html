@@ -1,5 +1,13 @@
-<span details item="selectedProduct.Price"></span>
-<table class="table table-hover ">
+<span details item="selectedProduct.Price"></span><hr>
+<div class="row">
+    <div class="col-xs-4">
+        <input type="text" class="form-control" ng-model="searchModel" placeholder="Search by Model">
+    </div>
+    <div class="col-xs-4">
+        <input type="text" class="form-control" ng-model="searchPrice" placeholder="Search by Price">
+    </div>
+</div>
+<table class="table table-hover">
   <thead>
     <tr>
       <th><h3>Serial no.</h3></th>
@@ -7,10 +15,10 @@
       <th><h3>Price</h3></th>
     </tr>
   </thead>
-  <tbody ng-repeat="product in pc.myProducts">
+  <tbody ng-repeat="product in pc.myProducts|filter:{Model:searchModel}|filter:{Price:searchPrice}">
     <tr>
       <td><h4>{{product.index}}</h4></td>
-      <td><h4>{{product.Model}}</h4></td>
+      <td><h4>{{product.Model|uppercase}}</h4></td>
       <td><h4>{{product.Price|currency}}</h4></td>
         <td><button ng-click="addToCart(product)" class="btn btn-primary">Add to Cart</button></td>
     </tr>
