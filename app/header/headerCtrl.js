@@ -8,8 +8,8 @@
         hc.name = "BitBlogger";
         hc.navItems = [
             {
-                "key":"posts",
-                "value":"Posts"
+                "key":"upload",
+                "value":"Upload"
             },
             {
                 "key":"login",

@@ -2,11 +2,11 @@
     
     angular.module("register", []);
     
-    angular.module("register").controller("registerCtrl", ["registerSvc",registerCtrl]);
+    angular.module("register").controller("registerCtrl", ["registerSvc","$scope","$state",registerCtrl]);
     
     angular.module("register").service("registerSvc", ["$http","$q",registerSvc]);
     
-    function registerCtrl(registerSvc){
+    function registerCtrl(registerSvc, $scope, $state){
         var rc = this;
         rc.user ={};
         
@@ -18,6 +18,10 @@
         }).finally(function(response){
             
         });
+        
+        $scope.goToState=function(){
+            $state.go("success");
+        }
         
         
     }

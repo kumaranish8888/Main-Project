@@ -3,6 +3,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/darkly/bootstrap.min.css">
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     </head>
@@ -10,7 +13,7 @@
     
     <body ng-controller="mainCtrl as mc" class="container">
         
-        <div ng-include="mc.headerTemplate"></div> 
+        <div class="container" ng-include="mc.headerTemplate"></div> 
         
         
         <div ui-view></div>
@@ -22,5 +25,7 @@
         <script src="app/register/register.js"></script>
         <script src="app/products/products.js"></script>
         <script src="app/common/common.js"></script>
+        <script src="app/success/success.js"></script>
+        <script src="app/upload/upload.js"></script>
     </body>
 </html>

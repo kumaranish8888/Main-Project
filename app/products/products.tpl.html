@@ -1,4 +1,4 @@
-<span details item="selectedProduct.Price"></span><hr>
+<!-- <span details item="selectedProduct.Price"></span><hr> -->
 <div class="row">
     <div class="col-xs-4">
         <input type="text" class="form-control" ng-model="searchByModel" placeholder="Search By Model">
@@ -16,11 +16,11 @@
         <th><a href="#" ng-click="showMore()">Show More</a></th>
     </tr>
   </thead>
-  <tbody ng-repeat="product in pc.myProducts|orderBy:priceCriteria|filter:{Model:searchByModel}|filter:{Price:searchByPrice}">
+  <tbody ng-repeat="product in pc.myProducts|filter:{Model:searchByModel}|filter:{Price:searchByPrice}">
     <tr>
       <td><h4>{{product.index}}</h4></td>
-      <td><h4>{{product.Model}}</h4></td>
-      <td><h4>{{product.Price}}</h4></td>
+      <td><h4>{{product.Model|uppercase}}</h4></td>
+      <td><h4>{{product.Price|currency:"Rs."}}</h4></td>
         <td><button class="btn btn-primary" ng-click="addToCart(product)">Add to Cart</button></td>
     </tr>
   </tbody>

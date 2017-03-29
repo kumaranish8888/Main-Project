@@ -1,6 +1,6 @@
 (function(){
     
-    angular.module("project", ["header", "ui.router", "register", "products", "common"]);
+    angular.module("project", ["header", "ui.router", "register", "products", "common", "success", "upload"]);
     
     angular.module("project").controller("mainCtrl", [mainCtrl]);
     
@@ -16,8 +16,19 @@
             controller:"productsCtrl as pc"
         };
         
+        var succObj = {
+            templateUrl: "app/success/success.tpl.html"  
+        };
+        
+        var uploadObj = {
+            templateUrl: "app/upload/upload.tpl.html",
+            controller: "uploadCtrl as uc"
+        };
+        
         $stateProvider.state("register", registerObj);
         $stateProvider.state("products", productsObj);
+        $stateProvider.state("success", succObj);
+        $stateProvider.state("upload", uploadObj);
         
         
     }]);
