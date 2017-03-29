@@ -8,3 +8,7 @@ body {
 .myclass {
     color: black;
 }
+
+.navbar-inner {
+    background-color:transparent;
+}
