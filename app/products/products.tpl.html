@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-xs-4">
+        <input type="text" class="form-control" ng-model="searchByModel" placeholder="Search By Model">
+    </div>
+    <div class="col-xs-4">
+        <input type="text" class="form-control" ng-model="searchByPrice" placeholder="Search By Price">
+    </div>
+</div>
+<table class="table table-hover ">
+  <thead>
+    <tr>
+      <th><h3>Index</h3></th>
+      <th><h3>Model</h3></th>
+      <th><h3>Price</h3></th>
+    </tr>
+  </thead>
+  <tbody ng-repeat="product in pc.myProducts |filter:{Price:searchByPrice}|filter:{Model:searchByModel}">
+    <tr>
+      <td><h4>{{product.index}}</h4></td>
+      <td><h4>{{product.Model|uppercase}}</h4></td>
+      <td><h4>{{product.Price|currency}}</h4></td>
+        <td><button class="btn btn-primary" ng-click="addToCart(product)">Add to cart</button></td>
+    </tr>
+  </tbody>
+</table> 

@@ -1,0 +1,86 @@
+<form class="form-horizontal" name="myForm" novalidate>
+  <fieldset>
+    <legend>Legend</legend>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+      <div class="col-lg-4">
+        <input type="text" class="form-control" id="inputEmail" placeholder="Email" name="email" 
+               ng-model="rc.email"
+               ng-required="true">
+          <p ng-if="myForm.email.$error.required && myForm.email.$dirty">Email is required</p>
+      </div>
+    </div>
+      
+      <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">Username</label>
+      <div class="col-lg-4">
+        <input type="text" class="form-control" id="inputPassword" placeholder="Username" name="username" 
+               ng-model="rc.username"
+               ng-pattern="/^[A-z]+$/"
+               ng-required="true">
+          <p ng-if="myForm.username.$error.required && myForm.username.$dirty">Username is required field</p>
+          <p ng-if="myForm.username.$error.pattern">Invalid Username</p>
+      </div>
+    </div>
+    
+      <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+      <div class="col-lg-4">
+        <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password" ng-model="rc.password">
+      </div>
+    </div>
+      
+       <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">Age</label>
+      <div class="col-lg-4">
+        <input type="text" class="form-control" id="inputPassword" placeholder="Age" name="age" ng-model="rc.age">
+      </div>
+    </div>
+      
+       <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">Phone</label>
+      <div class="col-lg-4">
+        <input type="text" class="form-control" id="inputPassword" placeholder="Phone" name="phone" ng-model="rc.phone">
+      </div>
+    </div>
+    
+      <div class="form-group">
+      <label for="textArea" class="col-lg-2 control-label">Textarea</label>
+      <div class="col-lg-4">
+        <textarea class="form-control" rows="3" id="textArea"></textarea>
+      </div>
+    </div>
+    
+      <div class="form-group">
+      <label class="col-lg-2 control-label">Gender</label>
+      <div class="col-lg-4">
+        <div class="radio">
+          <label>
+            <input type="radio" name="male" id="optionsRadios1" value="M">
+            Male
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="female" id="optionsRadios2" value="F">
+            Female
+          </label>
+        </div>
+      </div>
+    </div>
+    
+      <div class="form-group">
+      <label class="col-lg-2 control-label">Countries</label>
+      <div class="col-lg-4">
+        <select class="form-control" ng-model="rc.selectedCountry" ng-options="country.name for country in rc.myCountries"></select>
+      </div>
+    </div>
+      
+      <div class="form-group">
+      <div class="col-lg-4 col-lg-offset-2">
+        <button type="reset" class="btn btn-default">Cancel</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
