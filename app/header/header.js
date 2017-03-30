@@ -33,6 +33,10 @@
             $state.go(data);
         }
         
+        hm.goState = function(){
+            $state.go("home");
+        }
+        
         $rootScope.$on("ADD-ITEM-TO-CART", function(item){
             hm.cartItems++;
         })
