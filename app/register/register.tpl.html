@@ -17,9 +17,11 @@
         <input type="text" class="form-control" id="inputPassword" placeholder="Username" name="username" 
                ng-model="rc.username"
                ng-pattern="/^[A-z]+$/"
-               ng-required="true">
+               ng-required="true"
+               checkuser-name>
           <p ng-if="myForm.username.$error.required && myForm.username.$dirty">Username is required field</p>
           <p ng-if="myForm.username.$error.pattern">Invalid Username</p>
+          <p ng-if="myForm.username.$error.checkuser && myForm.username.$dirty">Username already exists</p>
       </div>
     </div>
     
@@ -33,14 +35,20 @@
        <div class="form-group">
       <label for="inputPassword" class="col-lg-2 control-label">Age</label>
       <div class="col-lg-4">
-        <input type="text" class="form-control" id="inputPassword" placeholder="Age" name="age" ng-model="rc.age">
+        <input type="text" class="form-control" id="inputPassword" placeholder="Age" name="age" 
+               ng-model="rc.age"
+               numbers-only
+               maxlength=2>
       </div>
     </div>
       
        <div class="form-group">
       <label for="inputPassword" class="col-lg-2 control-label">Phone</label>
       <div class="col-lg-4">
-        <input type="text" class="form-control" id="inputPassword" placeholder="Phone" name="phone" ng-model="rc.phone">
+        <input type="text" class="form-control" id="inputPassword" placeholder="Phone" name="phone" 
+               ng-model="rc.phone"
+               numbers-only
+               maxlength=10>
       </div>
     </div>
     
@@ -75,6 +83,26 @@
         <select class="form-control" ng-model="rc.selectedCountry" ng-options="country.name for country in rc.myCountries"></select>
       </div>
     </div>
+      
+      <div class="form-group">
+      <label class="col-lg-2 control-label">Photo</label>
+      <input type="file" ngf-select ng-model="picFile" name="file"    
+             accept="image/*" ngf-max-size="2MB" required
+             ngf-model-invalid="errorFile" class="form-control">
+      <i ng-show="myForm.file.$error.required">*required</i><br>
+      <i ng-show="myForm.file.$error.maxSize">File too large 
+          {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
+      <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb"> <button ng-click="picFile = null" ng-show="picFile">Remove</button>
+      <br>
+      <button ng-disabled="!myForm.$valid" 
+              ng-click="uploadPic(picFile)">Submit</button>
+      <span class="progress" ng-show="picFile.progress >= 0">
+        <div style="width:{{picFile.progress}}%" 
+            ng-bind="picFile.progress + '%'"></div>
+      </span>
+      <span ng-show="picFile.result">Upload Successful</span>
+      <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+      </div>
       
       <div class="form-group">
       <div class="col-lg-4 col-lg-offset-2">

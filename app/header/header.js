@@ -2,18 +2,23 @@
     
     angular.module("header", []);
     
-    angular.module("header").controller("headerCtrl", ["headerSvc", "$rootScope", "$scope", headerCtrl]);
+    angular.module("header").controller("headerCtrl", ["headerSvc", "$rootScope", "$scope", "$state", headerCtrl]);
     
     angular.module("header").service("headerSvc", [headerSvc]);
     
-    function headerCtrl(headerSvc, $rootScope, $scope){
+    function headerCtrl(headerSvc, $rootScope, $scope, $state){
         var hc = this;
         hc.navItem = headerSvc.navItems();
         hc.cartItems = 0;
+        hc.mybrandName = "BitBlogger";
         
         $rootScope.$on("ADD-ITEM-TO-CART",function(){
             hc.cartItems++;
         })
+        
+        hc.goToState = function(){
+            $state.go("home");
+        }
         
     }
     

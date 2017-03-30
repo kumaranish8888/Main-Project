@@ -18,6 +18,7 @@
         });
         
         $scope.addToCart = function(item){
+            $scope.selected = item;
             $rootScope.$broadcast("ADD-ITEM-TO-CART");
         }
         
