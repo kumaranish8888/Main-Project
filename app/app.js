@@ -17,14 +17,14 @@
         var homeObj = {
             templateUrl: "app/home/home.tpl.html",
             controller: "homeCtrl as hc",
-            url: '/home'
+            url: '/'
         };
         
         $stateProvider.state("register", registerObj);
         $stateProvider.state("products", productsObj);
         $stateProvider.state("home", homeObj);
         
-         $urlRouterProvider.otherwise('/home');
+         $urlRouterProvider.otherwise('/');
         
     }]);
     
