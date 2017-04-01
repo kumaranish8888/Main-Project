@@ -9,8 +9,9 @@
     </head>
 
     <body ng-controller="mainCtrl as mc" class="container">
+        
         <div ng-include="mc.headerTemplate"></div>    
-     <!--   <custom-navbar></custom-navbar> -->
+
         <div ui-view></div>
 
         
@@ -21,5 +22,6 @@
         <script src="app/products/products.js"></script>
         <script src="app/common/common.js"></script>
         <script src="app/home/home.js"></script>
+        <script src="app/login/login.js"></script>
     </body>
 </html>

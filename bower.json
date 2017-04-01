@@ -1,0 +1,24 @@
+{
+  "name": "Main-Project",
+  "homepage": "https://github.com/kumaranish8888/Main-Project",
+  "authors": [
+    "kumaranish8888 <kumaranish8888@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "^0.4.2",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "ng-file-upload": "^12.2.13",
+    "underscore": "^1.8.3"
+  }
+}

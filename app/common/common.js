@@ -16,12 +16,12 @@
   //      };
   //  }
     
-    function customNavbar (){
+  /*  function customNavbar (){
         return {
             templateUrl: "app/header/header.tpl.html",
             restrict: "A"
         };
-    }
+    } */
     
     function details(){
         return {
